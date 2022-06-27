@@ -39,6 +39,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'no-tabs': ['error', { allowIndentationTabs: true }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/prop-types': 'off',
   },
   plugins: ['react', 'jsx-a11y', '@typescript-eslint'],
   overrides: [
@@ -50,6 +51,8 @@ module.exports = {
         '**/*.spec.js',
         '**/*.spec.jsx',
         '**/*.spec.tsx',
+        '**/__tests__/*.utils.tsx',
+        '**/__tests__/*.utils.ts',
       ],
       env: {
         jest: true,

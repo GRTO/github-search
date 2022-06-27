@@ -1,21 +1,15 @@
-import './app.scss';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import GitSearch from './client/pages/GitSearch';
 
-const App: React.FC = () => {
-  const name: string = 'Custom React App v18 - Typescript & Webpack 💻 👍 ';
-  return (
-    <div className="app-container">
-      <div className="workspace">
-        <h1 className="custom-styles">Hi, this is a boilerplate project called: {name}</h1>
-        <span>It uses:</span>
-        <ul>
-          <li>React v18</li>
-          <li>Typescript</li>
-          <li>Webpack</li>
-          <li>Babel</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
+const queryClient = new QueryClient({ defaultOptions: { queries: { staleTime: 5 * 1000 } } });
+
+const App: React.FC = () => (
+  <QueryClientProvider client={queryClient}>
+    {process.env.NODE_ENV !== 'production' ? <ReactQueryDevtools initialIsOpen={false} /> : null}
+    <GitSearch testId="github-search" />
+  </QueryClientProvider>
+);
 
 export default App;
