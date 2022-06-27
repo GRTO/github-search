@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dotenv = require('dotenv').config({ path: `${__dirname}/.env` });
 const isDevelopment = process.env.NODE_ENV !== 'production';
+console.log('process.env', process.env);
 
 const path = require('path');
 const { DefinePlugin } = require('webpack');
@@ -43,12 +44,7 @@ module.exports = function build(env, arg) {
           test: /\.(s*)css$/,
           include: path.resolve(__dirname, 'src'),
           exclude: /node_modules/,
-          use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader',
-            'postcss-loader',
-          ],
+          use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
         },
         {
           test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
@@ -66,7 +62,7 @@ module.exports = function build(env, arg) {
         filename: 'index.html',
       }),
       new DefinePlugin({
-        'process.env': JSON.stringify(dotenv.parsed),
+        'process.env': JSON.stringify({ ...dotenv.parsed, ...process.env }),
         'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production'),
       }),
     ],
