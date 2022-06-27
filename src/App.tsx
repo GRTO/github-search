@@ -7,7 +7,7 @@ const queryClient = new QueryClient({ defaultOptions: { queries: { staleTime: 5 
 
 const App: React.FC = () => (
   <QueryClientProvider client={queryClient}>
-    {process.env.NODE_ENV !== 'production' ? <ReactQueryDevtools initialIsOpen={false} /> : null}
+    {process.env.NODE_ENV === 'development' ? <ReactQueryDevtools initialIsOpen={false} /> : null}
     <GitSearch testId="github-search" />
   </QueryClientProvider>
 );

@@ -1,6 +1,7 @@
 # Getting Started with the github search project
 
 This project was bootstrapped with [my current react v18 Boilerplate code](https://github.com/GRTO/react-18-boilerplate). You can use it, and it is in my github repository.
+You can take a look how the app works, here is a deployed version of this project [GitHub Search on Vercel](https://github-search-j208yn5ph-grto.vercel.app/).
 
 [![github-Search.png](https://i.postimg.cc/vHNFXQZF/github-Search.png)](https://postimg.cc/CzkQxp8m)
 
