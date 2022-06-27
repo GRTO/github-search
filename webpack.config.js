@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dotenv = require('dotenv').config({ path: `${__dirname}/.env` });
 const isDevelopment = process.env.NODE_ENV !== 'production';
-console.log('process.env', process.env);
 
 const path = require('path');
 const { DefinePlugin } = require('webpack');
