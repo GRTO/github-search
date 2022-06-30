@@ -40,6 +40,12 @@ Here we are using some of the modern technologies that we will use in a real wor
 - Husky
 - EsLint
 
+# Improvements
+
+- When we do a call to the graphql endpoint we are sending the bearer token, that can be hidden using HttpProxy. I will subject to create BFF (backend for frontend) with httpProxies to get this endpoint and hide the headers.
+- We need to add validation to the form, like dont search when the data is empty. A good way to do it can be using formik or a simple custom hook to handle this.
+- Last but not least, we can improve the UI with more filters when we search the data. For we can just search information, but according to github docs, there more filters for related topics.
+
 # Help
 
 Contact me at gerson.toribio@pucp.pe
